@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); /* Reset SCSS */
+/* Box sizing */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body, html {
+  min-height: 100%;
+  min-width: 100%;
+  line-height: 1;
+}
+
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Remove default hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background: hsl(0, 100%, 74%) url("images/bg-intro-mobile.png");
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4.25rem;
+  padding: 6rem 1.5rem 4.25rem;
+  text-align: center;
+}
+
+.text__title {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  margin-bottom: 1.75rem;
+  font-weight: 700;
+  line-height: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+}
+
+.text__p {
+  color: hsla(100, 100%, 100%, 0.7);
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.button {
+  color: white;
+  width: 100%;
+  padding: 1.25rem;
+  background: hsl(248, 32%, 49%);
+  border-radius: 0.625rem;
+  font-weight: 600;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 0.5px;
+}
+.button__p {
+  margin-inline: auto;
+  width: 50%;
+  line-height: 1.5rem;
+}
+.button__span {
+  font-weight: 400;
+  color: hsla(100, 100%, 100%, 0.8);
+}
+
+.contact {
+  background: white;
+  width: 100%;
+  min-height: 27.625rem;
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 0.5px;
+}
+.contact__input {
+  font-family: "poppins", sans-serif;
+  font-size: 0.875rem;
+  color: hsl(249, 10%, 26%);
+  font-weight: 600;
+  width: 100%;
+  padding: 1.125rem;
+  border: 1px solid hsl(246, 25%, 77%);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+.contact .input_zone {
+  position: relative;
+}
+.contact .open_eye, .contact .close_eye {
+  position: absolute;
+  height: 1.75rem;
+  right: 1.6875rem;
+  top: 1rem;
+}
+.contact .close_eye {
+  display: none;
+}
+.contact .error_msg {
+  display: none;
+  color: hsl(0, 100%, 74%);
+  font-size: 0.6875rem;
+  font-style: italic;
+  font-weight: 500;
+  text-align: end;
+}
+.contact .error_icon {
+  display: none;
+  position: absolute;
+  right: 1.6875rem;
+  top: 1rem;
+}
+.contact__button {
+  text-transform: uppercase;
+  color: white;
+  width: 100%;
+  background: hsl(154, 59%, 51%);
+  border: 0px;
+  border-radius: 0.25rem;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 0.875rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0.5px;
+}
+.contact__p {
+  width: 90%;
+  margin-inline: auto;
+  font-size: 0.6875rem;
+  color: hsl(246, 25%, 77%);
+  font-weight: 500;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.contact__span {
+  color: hsl(0, 100%, 74%);
+  font-weight: 700;
+}
+
+@media (min-width: 64rem) {
+  body {
+    background: hsl(0, 100%, 74%) url("images/bg-intro-mobile.png");
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+    padding: 5.5rem 10.375rem;
+  }
+  .main .form {
+    min-width: 33.75rem;
+  }
+  .main .form .contact {
+    padding: 2.5rem;
+  }
+  .main .form .contact__input {
+    margin-bottom: 1.25rem;
+  }
+  .main .form .contact .error_msg {
+    margin-bottom: 1rem;
+  }
+  .main .form .contact__button:hover {
+    opacity: 70%;
+  }
+}/*# sourceMappingURL=Style.css.map */

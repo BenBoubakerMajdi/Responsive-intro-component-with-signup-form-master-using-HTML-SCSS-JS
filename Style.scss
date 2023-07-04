@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import"reset";
+@mixin flexbox($direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+//! Colors
+
+//? Primary
+
+$Red: hsl(0, 100%, 74%);
+$Green: hsl(154, 59%, 51%);
+
+//? Accent
+
+$Blue: hsl(248, 32%, 49%);
+
+//? Neutral
+
+$Dark_Blue: hsl(249, 10%, 26%); 
+$Grayish_Blue: hsl(246, 25%, 77%);
+
+//! Typography
+
+$Regular: 400;
+$Medium: 500;
+$Semi_bold: 600;
+$Bold: 700; 
+
+//! responsive 
+$Breakpoint: 64rem;
+
+
+body {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    background:$Red url("images/bg-intro-mobile.png"); 
+}
+
+.main {
+    @include flexbox(column, flex-start, center);
+    gap: 4.25rem;
+    padding: 6rem 1.5rem 4.25rem;
+    text-align: center;
+}
+
+.text__title {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    margin-bottom: 1.75rem;
+    font-weight: $Bold;
+    line-height: clamp(2rem, 5vw, 3.5rem);
+    color: white;
+}
+
+.text__p {
+    color: hsla(100%, 100%, 100%, 70%);
+    line-height: 1.5rem;
+    font-weight:$Medium;
+}
+
+.button {
+    color: white;
+    width: 100%;
+    padding: 1.25rem;
+    background: $Blue;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 0.5px;
+
+    &__p {
+        margin-inline: auto;
+        width: 50%;
+        line-height: 1.5rem;   
+    }
+
+    &__span {
+        font-weight: $Regular;
+        color: hsla(100%, 100%, 100%, 80%);
+    }
+}
+
+.contact{
+    background: white;
+    width: 100%;
+    min-height: 27.625rem;
+    border-radius: 0.625rem;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 0.5px;
+
+    &__input {
+        font-family: 'poppins', sans-serif;
+        font-size: 0.875rem;
+        color: $Dark_Blue;
+        font-weight: $Semi_bold;
+        width: 100%;
+        padding: 1.125rem;
+        border: 1px solid $Grayish_Blue;
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+    }
+    .input_zone {
+        position: relative;
+    }
+    .open_eye, .close_eye {
+        position: absolute;
+        height: 1.75rem;
+        right: 1.6875rem;
+        top: 1rem;
+    }
+    .close_eye {
+        display: none;
+    }
+    .error_msg {
+        display: none;
+        color: $Red;
+        font-size: 0.6875rem;
+        font-style: italic;
+        font-weight: $Medium;
+        text-align: end;
+    }
+    .error_icon {
+        display: none;
+        position: absolute;
+        right: 1.6875rem;
+        top: 1rem;;
+    }
+    &__button {
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+        background: $Green;
+        border: 0px;
+        border-radius: 0.25rem;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem;
+        font-weight: $Semi_bold;
+        letter-spacing: 0.0625rem;
+        margin-bottom: 0.875rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0.5px;
+    }
+
+    &__p {
+        width: 90%;
+        margin-inline: auto;;
+        font-size: 0.6875rem;
+        color: $Grayish_Blue;
+        font-weight: $Medium;
+        line-height: 1.25rem;
+        text-align: center;
+    }
+
+    &__span {
+        color: $Red;
+        font-weight: $Bold;
+    }
+
+}
+
+@media (min-width: 64rem) {
+    body {
+        background:$Red url("images/bg-intro-mobile.png"); 
+    }
+    .main {
+        @include flexbox(row, space-evenly, center);
+        text-align: start;
+        padding:5.5rem 10.375rem;
+        
+        .form {
+            min-width: 33.75rem;
+
+            .contact {
+                padding: 2.5rem;
+
+                &__input {
+                    margin-bottom: 1.25rem;
+                }
+
+                .error_msg {
+                    margin-bottom: 1rem;
+                }
+
+                &__button:hover {
+                    opacity: 70%;
+                }
+
+            }
+        }
+    }
+}
+
